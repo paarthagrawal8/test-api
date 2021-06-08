@@ -2,6 +2,7 @@ const { json } = require('body-parser')
 const express = require('express')
 const app = express()
 const pool = require("./db")
+const port = process.env.PORT || 5001;
 
 app.use(express.json())
 //recieve
@@ -67,6 +68,6 @@ app.delete("/showdata/:id" , async (req , res) =>{
 
 
 
-app.listen(5001 , () =>{
-    console.log("http://localhost:5001")
+app.listen(port , () =>{
+    console.log(`http://localhost:${port}`)
 })
